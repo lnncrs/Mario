@@ -1,0 +1,5 @@
+recursive-include src *
+recursive-include rle_python_interface *
+recursive-include rle_python_interface *.so
+include CMakeLists.txt
+include copy_cores.sh
