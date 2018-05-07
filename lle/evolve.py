@@ -44,6 +44,7 @@ def runMarioRun():
     a = actions_list[randrange(len(actions_list))]
     reward = performAction(a, rle)
     total_run = getRadar(rle,2)[1] * 100
+    print(total_run,a)
     total_reward += reward
   return total_run, total_reward, getTime()
 
