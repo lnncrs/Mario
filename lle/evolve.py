@@ -1,8 +1,9 @@
 
 import sys
 import time
+import random, string
+import numpy as np
 
-from random import randrange
 from rle_python_interface.rle_python_interface import RLEInterface
 from time import sleep
 
@@ -18,9 +19,11 @@ actions_map = {'noop':0
              , 'spin':256, 'spinright':384, 'runspinright':386, 'spinleft':320, 'spinrunleft':322
               }
 
-actions_list = [66,130,128,131,386]
+#actions_list = [66,130,128,131,386]
+#actions_list = [130,131]
+actions_list = [1,1,386,1,1,1,1,386,386,386,386,386,386,131,386,386,386,1,1,386,131,1,1,386,386]
 
-actions_list = [130,131]
+
 
 time_start = time.perf_counter()
 
@@ -36,6 +39,9 @@ def getRadar(rle,radius=6):
   a = getInputs(rle.getRAM(), radius)
   return np.reshape(a[0], (-1, (radius*2+1))), a[1], a[2]
 
+def getKey(k):
+  return ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(k))
+
 def runMarioRun():
   rle = loadInterface(True)
   total_reward = 0
@@ -50,8 +56,8 @@ def runMarioRun():
   return total_run, total_reward, getTime()
 
 def play():
-
-  print(runMarioRun())
+  print(getKey(4))
+  #print(runMarioRun())
 
 
 def main():

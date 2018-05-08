@@ -9,7 +9,7 @@ import pickle
 import os
 from rle_python_interface.rle_python_interface import RLEInterface
 import numpy as np
-from numpy.random import uniform, choice, random
+from numpy.random import uniform, choice, choices, random
 
 # Todas as possíveis ações
 actions_map = {'noop':0, 'down':32, 'up':16, 'jump':1, 'spin':3,
