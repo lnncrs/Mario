@@ -58,7 +58,6 @@ def play():
   print(getKey(4))
   #print(runMarioRun())
 
-
 def main():
   play()
 
