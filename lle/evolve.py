@@ -2,7 +2,6 @@
 import sys
 import time
 import random, string
-import numpy as np
 
 from rle_python_interface.rle_python_interface import RLEInterface
 from time import sleep
